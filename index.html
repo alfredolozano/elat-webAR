@@ -1,0 +1,234 @@
+<!--  TO DO
+- go to https://hiukim.github.io/mind-ar-js-doc/tools/compile/ to create your target image file (.mind)
+- on their tool drag & drop all the images you want to use as target BEFORE generating the .mind file
+- the tool will generate 1 .mind file that include the info of all the image targets you want/need
+- upload it to your asset
+- get the URL and paste it in "mindar-image="imageTargetSrc: URL"
+
+AR 3D MODEL
+- upload in your asset a .glb
+- get the URL and paste it in the src="URL" inside the <a-gltf-model section
+
+AR IMAGE (.jpg / .png) OR VIDEO (.mp4)
+- upload in your asset a .jpg or .png or .mp4 
+- get the URL and paste it in the src="URL" inside the <a-plane section
+-->
+
+<html>
+  <head>
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="apple-mobile-webb-app-callable" content="yes" />
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.3/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <a-scene
+      mindar-image="filterMinCF:0.01; filterBeta: 10; uiScanning:no; imageTargetSrc: https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/targets_sandiego.mind?v=1699484795858"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights; toneMapping:ACESFilmic"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+<!--  Esta es una capa que le agrego a la cámara para bajar la opacidad pero no sé si es bueno tenerla -->
+<!--       <a-entity geometry="primitive: sphere; radius: 80000" material="src: url(myBlackAndWhiteTexture.jpg); side: back; opacity: 0.7; transparent: true" scale="-1 1 1"></a-entity> -->
+
+      <a-assets>
+<!--         <video id="video01" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.me/b035f600-71a7-4744-bf72-dfa815efc06e/01_optimized.mp4?v=1699484741854"></video>
+        <video id="video02" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/02_optimized.mp4?v=1699484753907"></video> -->
+        <video id="video03" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/03_optimized.mp4?v=1699484771668"></video>
+        <video id="video04" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/04_optimized.mp4?v=1699484776131"></video>
+        <video id="video05" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/05_optimized.mp4?v=1699484790229"></video>
+        <video id="video06" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/06_optimized.mp4?v=1699484806934"></video>
+        <video id="video07" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.me/b035f600-71a7-4744-bf72-dfa815efc06e/07_optimized.mp4?v=1699484830178"></video>
+        <video id="video08" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/08_optimized.mp4?v=1699484846530"></video>
+        <video id="video09" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/09_optimized.mp4?v=1699484861730"></video>
+        <video id="video10" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/10_optimized.mp4?v=1699484867400"></video>
+        <video id="video11" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.me/b035f600-71a7-4744-bf72-dfa815efc06e/11_optimized.mp4?v=1699484885196"></video>
+        <video id="video12" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/12_optimized.mp4?v=1699484899724"></video>
+        <video id="video13" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.me/b035f600-71a7-4744-bf72-dfa815efc06e/13_optimized.mp4?v=1699484933199"></video>
+<!--         <video id="video14" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/14_optimized.mp4?v=1699484936560"></video>
+        <video id="video15" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/15_optimized.mp4?v=1699484951262"></video>
+        <video id="video16" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/16_optimized.mp4?v=1699484965014"></video>
+        <video id="video17" autoplay="false" loop="true" crossorigin="anonymous" muted playsinline webkit-playsinline
+               src="https://cdn.glitch.global/b035f600-71a7-4744-bf72-dfa815efc06e/17_optimized.mp4?v=1699484968528"></video> -->
+      </a-assets>
+
+<!--       <a-entity vidhandler="video: #video01" mindar-image-target="targetIndex: 0">
+        <a-plane
+          src="#video01"
+          position="0 0 0"
+          height="1.8"
+          width="1.35"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video02" mindar-image-target="targetIndex: 1">
+        <a-plane
+          src="#video02"
+          position="-0.55 0 0"
+          height="1.8"
+          width="2.7"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity> -->
+      <a-entity vidhandler="video: #video03" mindar-image-target="targetIndex: 2">
+        <a-plane
+          src="#video03"
+          position="0 0 0"
+          height="1.35"
+          width="1.03"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video04" mindar-image-target="targetIndex: 3">
+        <a-plane
+          src="#video04"
+          position="-0.7 0 0"
+          height="1.8"
+          width="2.7"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video05" mindar-image-target="targetIndex: 4">
+        <a-plane
+          src="#video05"
+          position="0 -0.1 0"
+          height="1.8"
+          width="1.35"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video06" mindar-image-target="targetIndex: 5">
+        <a-plane
+          src="#video06"
+          position="0 0 0"
+          height="1.5"
+          width="1.2"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video07" mindar-image-target="targetIndex: 6">
+        <a-plane
+          src="#video07"
+          position="0.05 0.05 0"
+          height="1.8"
+          width="1.35"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video08" mindar-image-target="targetIndex: 7">
+        <a-plane
+          src="#video08"
+          position="0 0.02 0"
+          height="1.8"
+          width="1.35"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video09" mindar-image-target="targetIndex: 8">
+        <a-plane
+          src="#video09"
+          position="-0.28 0 0"
+          height="1.8"
+          width="1.8"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video10" mindar-image-target="targetIndex: 9">
+        <a-plane
+          src="#video10"
+          position="0 0 0"
+          height="1.35"
+          width="1.03"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video11" mindar-image-target="targetIndex: 10">
+        <a-plane
+          src="#video11"
+          position=".2 0.02 0"
+          height="1.8"
+          width="1.8"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video12" mindar-image-target="targetIndex: 11">
+        <a-plane
+          src="#video12"
+          position="-0.65 0 0"
+          height="1.8"
+          width="2.6"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video13" mindar-image-target="targetIndex: 12">
+        <a-plane
+          src="#video13"
+          position="-0.22 0.05 0"
+          height="1.8"
+          width="1.8"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+<!--       <a-entity vidhandler="video: #video14" mindar-image-target="targetIndex: 13">
+        <a-plane
+          src="#video14"
+          position="0.64 0 0"
+          height="1.82"
+          width="2.64"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video15" mindar-image-target="targetIndex: 14">
+        <a-plane
+          src="#video15"
+          position="0 0.02 0"
+          height="1.75"
+          width="1.35"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video16" mindar-image-target="targetIndex: 15">
+        <a-plane
+          src="#video16"
+          position="-0.1 0.05 0"
+          height="2"
+          width="1.5"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+      <a-entity vidhandler="video: #video17" mindar-image-target="targetIndex: 16">
+        <a-plane
+          src="#video17"
+          position="0 0 0"
+          height="1.35"
+          width="1"
+          rotation="0 0 0"
+        ></a-plane>
+      </a-entity>
+ -->
+      
+    </a-scene>
+  </body>
+</html>
